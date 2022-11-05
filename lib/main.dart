@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:weather_app/currentweather.dart';
 import 'package:weather_app/help_screen.dart';
 
 void main() {

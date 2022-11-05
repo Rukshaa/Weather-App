@@ -78,19 +78,11 @@ class _HomePageState extends State<HomePage> {
   Widget weatherBox(Weather _weather) {
     return Column(
       children: [
-        // Text("Temp:${_weather.temp}*C"),
+        Text("Temp_C:${_weather.current_temp}"),
         Text("Lat:${_weather.lat}"),
         Text("Lon:${_weather.lon}"),
         Text("Condition:${_weather.condition}"),
         // Text("Icon:${_weather.icon}"),
-        // // Text("${_weather.}"),
-        // Text("Feels:${_weather.lat}*C"),
-
-
-        //
-        // Text("Temp_C:${_weather.temp}*C"),
-        // // Text("${_weather.}"),
-        // Text("Feels:${_weather.lat}*C"),
 
 
 
@@ -101,10 +93,6 @@ class _HomePageState extends State<HomePage> {
 
   Future<Weather?> getCurrentWeather() async {
     Weather? weather;
-    // String city ="Kathmandu";
-    // String apiKey ="07ab48c4a9d2415592485359220311";
-    // var url ="http://api.weatherapi.com/v1/current.json?key=1bc0383d81444b58b1432929200711&q=48.8567,2.350";
-    // var url ="http://api.openweathermap.org/data/2.5/weather?q=Kathmandu&appid=07ab48c4a9d2415592485359220311&units=metric";
     try {
       var url = "http://api.weatherapi.com/v1/forecast.json?key=07ab48c4a9d2415592485359220311&q=$place&days=1&aqi=yes&alerts=yes";
 
@@ -118,7 +106,7 @@ class _HomePageState extends State<HomePage> {
       }
       return weather;
     }catch(e,stack){
-      print("Err $e Stack $stack");
+      print("Error $e Stack $stack");
     }
   }
 }
